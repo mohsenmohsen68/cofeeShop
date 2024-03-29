@@ -7,12 +7,29 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+     colors: {
+      "brown":{
+        "100":"#ECE0D1",
+        "300": "#DBC1AC",
+        "600": "#967259",
+        "900": "##634832"
       },
     },
-  },
+      boxShadow: {
+         "4xl": "0px 1px 10px 0px #0000000D"
+      },
+      borderRadius: {
+        "4xl": "2rem",
+      },
+      fontFamily:{
+         "dana": "Dana Regular",
+         "dana-medium": "Dana Medium",
+         "dana-demiBold": "Dana DemiBold",
+         "moraba": "moraba regular",
+         "moraba-medium": "moraba medium",
+         "moraba-demiBold": "moraba demibold",
+      },
+     },
+    },
   plugins: [],
 }
