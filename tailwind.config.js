@@ -5,7 +5,9 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: "class",
   theme: {
+    
     extend: {
      colors: {
       "brown":{
@@ -29,6 +31,9 @@ module.exports = {
          "moraba-medium": "moraba medium",
          "moraba-demiBold": "moraba demibold",
       },
+      backgroundImage: {
+        'coffee': "url('/img/headerBgDesktop.png')", 
+    },
      },
     },
   plugins: [],
