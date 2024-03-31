@@ -3,12 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 import DarkModeHandler from "./DarkModeHandler";
 
-
 function SiteHeader() {
   return (
     <div className="w-full h-dvh ">
+      {/* ------------------ svgs (svg sprite) --------------------- */}
       <svg className="hidden">
-       
+        <symbol
+          id="arrowLeft"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </symbol>
 
         <symbol
           id="shoppingCart"
@@ -39,8 +52,9 @@ function SiteHeader() {
           />
         </symbol>
       </svg>
+      {/* -------------- header container ------------------- */}
       <div className="w-[90%]  h-24 rounded-3xl bg-black/50 mx-auto  top-8 fixed left-0 right-0 flex justify-between items-center backdrop-blur-[6px]">
-        {/* menu and logo */}
+        {/* ------------------menu and logo-------------------- */}
         <div className="flex font-dana-medium items-center mr-10">
           <div>
             <Image
@@ -65,7 +79,8 @@ function SiteHeader() {
               <li className="relative transition-all group">
                 {" "}
                 <Link href="#">فروشگاه</Link>
-                <ul className=" absolute w-44 invisible opacity-0 group-hover:visible group-hover:opacity-100 bg-slate-50/40 rounded-xl border-y-2 border-orange-400 flex flex-col items-center justify-center overflow-hidden child:text-black child:h-full child:p-1 child-hover:text-orange-400 dark:bg-slate-600 dark:child-hover:text-white">
+                {/* ---------------- sub menu ---------------------- */}
+                <ul className="child:font-dana leading-8 child:tracking-normal  absolute w-44 invisible opacity-0 group-hover:visible group-hover:opacity-100  rounded-xl border-y-2 border-orange-400 flex flex-col items-center justify-center overflow-hidden child:h-full child:p-1 child-hover:text-orange-40 bg-white child:text-black child-hover:text-orange-300 child:dark:text-white dark:bg-zinc-700 dark:child-hover:text-orange-300">
                   <li>
                     <Link href="#">قهوه ویژه</Link>
                   </li>
@@ -101,13 +116,59 @@ function SiteHeader() {
             </ul>
           </div>
         </div>
-        {/* login and daylight */}
+        {/* ------------------ login and dark mode ---------------- */}
         <div className="flex justify-center items-center h-[70%] ml-10">
           <div className="flex border-l-2 items-center ml-10 pl-10 ">
-            <svg className="w-8 h-8 ml-5 text-orange-200 hover:cursor-pointer">
-              <use href="#shoppingCart"></use>
-            </svg>
-           <DarkModeHandler/>
+            {/* ---------------- shopping cart ---------------- */}
+            <div className="group relative">
+              <svg className="w-8 h-8 ml-5 text-orange-200 hover:cursor-pointer">
+                <use href="#shoppingCart"></use>
+              </svg>
+              <div className="opacity-0 p-7 invisible absolute w-[400px] h-[309px] bg-white dark:bg-zinc-700 dark:text-white left-0 group-hover:visible group-hover:opacity-100 transition-all rounded-2xl border-t-[3px] border-orange-300 shadow-4xl ">
+                {/* header */}
+                <div className="flex justify-between text-black">
+                  <div className="font-dana text-xs text-gray-300">1 مورد</div>
+                  <div className=" flex font-dana text-xs text-orange-300">
+                    مشاهده سبد خرید{" "}
+                    <svg className="w-4 h-4 text-orange-300 font-dana-medium">
+                      <use href="#arrowLeft"></use>
+                    </svg>
+                  </div>
+                </div>
+                <hr className="text-gray-300 w-full mt-4" />
+                {/* body */}
+                <div className="flex my-4">
+                  <div>
+                    <Image src="/img/p1.png" width={140} height={140} />
+                  </div>
+                  <div className="flex flex-col justify-between ">
+                    <div className="font-dana text-base line-clamp-2">
+                      قهوه اسپرسو بن مانو مدل پریسکا 250 گرمی
+                    </div>
+                    <div>
+                      <div className="font-dana text-xs text-teal-600 dark:text-emerald-500 tracking-tighter">
+                        <span>14,500</span> تومان تخفیف
+                      </div>
+                      <div className="font-dana">
+                        <span className="text-[20px]">175,000</span> تومان
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr className="text-gray-400 w-full mt-4" />
+                {/* footer */}
+                <div className="flex justify-between mt-4">
+                  <div className="child:font-dana flex flex-col">
+                    <span className="text-sm text-gray-400">مبلغ قابل پرداخت</span>
+                    <span><span className="text-[20px]">350,000</span> <span className="tracking-tighter">تومان</span></span>
+                  </div>
+                  <div className="w-36 h-14 bg-teal-600 dark:bg-emerald-500 font-dana text-white rounded-xl flex justify-center items-center">
+                    <Link href="#" className=" " >ثبت سفارش</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <DarkModeHandler />
           </div>
           <div className="font-dana-medium flex items-center">
             <Link href={"#"} className="flex items-center text-orange-200">

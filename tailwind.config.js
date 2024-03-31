@@ -32,7 +32,7 @@ module.exports = {
          "moraba-demiBold": "moraba demibold",
       },
       backgroundImage: {
-        'coffee': "url('/img/headerBgDesktop.png')", 
+        'coffee': "url('/img/headerBgDesktop.webp')", 
     },
      },
     },
