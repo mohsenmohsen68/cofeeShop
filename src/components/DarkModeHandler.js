@@ -70,7 +70,7 @@ function darkModeHandler() {
               ) : (
                 <svg
                   onClick={changeToLight}
-                  className="w-8 h-8 ml-5 text-orange-200 hover:cursor-pointer"
+                  className="w-8 h-8 xl:ml-5 text-orange-200 hover:cursor-pointer"
                 >
                   <use href="#sun"></use>
                 </svg>
